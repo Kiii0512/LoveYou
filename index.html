@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Love you</title>
+	<!--icon web-->
+	<link rel="icon" type="image/x-icon" href="heart1.png">
+    <link href="https://fonts.googleapis.com/css?family=Comic+Relief" rel="stylesheet">
+	<meta name="language" content="en-US">
+	<meta name="title" content="Love you">
+	<meta name="description" content="Trang web được tạo nên do một con người rảnh thích code và có nhiều tâm sự">
+	<!--css-->
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			border: 0;
+		}
+
+		.icon-love {
+			width: 400px;
+		}
+
+		html,
+		body {
+			width: 100%;
+			height: 100%;
+		}
+
+		body {
+			overflow: hidden;
+		}
+
+		.embeNhi {
+			width: 100%;
+			height: 100%;
+			position: relative;
+		}
+
+		/*---------------------- body_left -------------------------*/
+		.body_left {
+			width: 300px;
+			height: 300px;
+			left: 0;
+			bottom: 110px;
+			position: absolute;
+			z-index: 98;
+
+		}
+
+		/*---------------------- body_left -------------------------*/
+
+		/*---------------------- body_center -------------------------*/
+		.embeNhi .love {
+			width: 520px;
+			/* 13 * 40 */
+			height: 440px;
+			/* 11 * 40 */
+			left: 50%;
+			top: 55%;
+			position: absolute;
+			margin: -200px 0 0 -220px;
+			/*background-color: gray;*/
+		}
+
+		.love .block {
+			right: 0;
+			position: absolute;
+			visibility: hidden;
+			background-color: yellow;
+		}
+
+		.love .block div {
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			background: url("heart.png") no-repeat;
+			background-size: contain;
+			/*background-color: #c40908;*/
+			/*border: 1px solid silver;*/
+			box-sizing: border-box;
+		}
+
+
+		/*---------------------- body_center -------------------------*/
+
+		/*---------------------- footer -------------------------*/
+		@keyframes border {
+			0% {
+				width: 0;
+			}
+			5% {
+				width: 5%;
+			}
+			10% {
+				width: 10%;
+			}
+			15% {
+				width: 15%;
+			}
+			20% {
+				width: 20%;
+			}
+			25% {
+				width: 25%;
+			}
+			30% {
+				width: 30%;
+			}
+			35% {
+				width: 35%;
+			}
+			40% {
+				width: 40%;
+			}
+			45% {
+				width: 45%;
+			}
+			50% {
+				width: 50%;
+			}
+			55% {
+				width: 55%;
+			}
+			60% {
+				width: 60%;
+			}
+			65% {
+				width: 65%;
+			}
+			70% {
+				width: 70%;
+			}
+			75% {
+				width: 75%;
+			}
+			80% {
+				width: 80%;
+			}
+			85% {
+				width: 85%;
+			}
+			90% {
+				width: 90%;
+			}
+			95% {
+				width: 95%;
+			}
+			100% {
+				width: 100%;
+			}
+
+		}
+
+		.footer {
+			bottom: 30px;
+			position: relative;
+			z-index: 99;
+		}
+
+		.footer .border .border-top {
+			/*width: 0;*/
+			/*display: inline-block;*/
+			border-top: 3px solid black;
+			transform-origin: left center;
+			-webkit-animation: border 312 linear;
+			-o-animation: border 12s linear;
+			animation: border 12s linear;
+			animation-fill-mode: both;
+			/*border-bottom: none;*/
+		}
+
+		.footer .border .border-bottom {
+			/*width: 0;*/
+			/*display: inline-block;*/
+			float: right;
+			border-top: 3px solid red;
+			transform-origin: right center;
+			-webkit-animation: border 7s linear 12s;
+			-o-animation: border 7s linear 12s;
+			animation: border 7s linear 12s;
+			animation-fill-mode: both;
+			/*border-bottom: none;*/
+		}
+
+		.footer .copyright {
+			width: 100%;
+			height: 30px;
+			position: absolute;
+			bottom: -30px;
+			text-align: center;
+			/*background-color: gray;*/
+
+		}
+
+		.copyright div {
+			width: 30%;
+			line-height: 30px;
+			display: inline-block;
+		}
+
+		.copyright div span {
+			color: dimgray;
+		}
+       #message {
+      position: absolute;
+      top: calc(50% + 220px);   /* đẩy xuống dưới .love */
+      left: 52%;
+      transform: translateX(-50%);
+      font-size: 70px;
+      color: crimson;
+      display: none;            /* ẩn trước khi JS bật */
+      white-space: nowrap;
+      font-family: Comic Relief, sans-serif;
+       }
+
+		/*---------------------- footer -------------------------*/
+	</style>
+</head>
+
+
+<body>
+
+	<audio autoplay="autopaly" loop="loop" id="audios" preload="auto">
+		<source src="MP3/1.mp3" />
+	</audio>
+
+	<div class="embeNhi" onselectstart="return false;" unselectable="on" style="-moz-user-select:none;">
+
+		<div class="body_left">
+			<img src="images/biubiubiu.gif" alt="" ondragstart='return false;'>
+        </div>
+
+        <div class="body_center love">
+            <div class="block">
+                <div class="div1"></div>
+                <div class="div2"></div>
+                <div class="div3"></div>
+                <div class="div4"></div>
+            </div>
+        </div>
+<div id="message">
+      I love you
+    </div>
+    </div> <!-- end .embeNhi -->
+
+    <div class="footer">
+        <div class="border">
+            <div class="border-top"></div>
+            <div class="border-bottom"></div>
+        </div>
+    </div>
+
+    <script >
+        const blk_pitn = {
+        block1: [[0, 1], [0, 0], [-1, 0], [-1, -1]],
+        block2: [[0, 1], [0, 0], [-1, 0], [0, -1]],
+        block3: [[-1, 1], [0, 0], [-1, 0], [-1, -1]],
+        block4: [[0, 1], [0, 0], [-1, 0], [-1, -1]], /* 1 */
+        block5: [[-1, 1], [0, 0], [-1, 0], [0, -1]],
+        block6: [[0, -1], [0, 0], [-1, 0], [1, -1]],
+        block7: [[-1, -1], [0, 0], [-1, 0], [1, 0]],
+        block8: [[-1, 1], [0, 0], [-1, 0], [-1, -1]], /* 3 */
+        block9: [[0, -1], [0, 0], [-1, 0], [1, 0]],
+        block10: [[-1, 1], [0, 0], [-1, 0], [1, 0]],
+        block11: [[2, 0], [0, 0], [-1, 0], [1, 0]], /* — */
+        block12: [[0, 1], [0, 0], [-1, 0], [0, -1]], /* 2 */
+        block13: [[0, 1], [0, 0], [-1, 0], [-1, -1]], /* 1 */
+        block14: [[1, 1], [0, 0], [-1, 0], [1, 0]],
+        block15: [[1, -1], [0, 0], [-1, 0], [1, 0]],
+        block16: [[-1, -1], [0, 0], [-1, 0], [1, 0]], /* 7 */
+        block17: [[0, 1], [0, 0], [-1, 0], [0, -1]], /* 2 */
+        block18: [[0, 1], [0, 0], [-1, 0], [-1, -1]], /* 1 */
+        block19: [[0, -1], [0, 0], [-1, 0], [1, 0]], /* 9 */
+        block20: [[1, -1], [0, 0], [-1, 0], [1, 0]],
+        block21: [[0, 1], [0, 0], [-1, 0], [-1, -1]], /* 1 */
+        block22: [[1, 1], [0, 0], [-1, 0], [1, 0]], /* 14 */
+        block23: [[0, 2], [0, 0], [0, -1], [0, 1]]      /* | */
+    },
+    offset_pitn = {
+        block1: [5, 3],
+        block2: [5, 1],
+        block3: [3, 4],
+        block4: [3, 2],
+        block5: [3, -1],
+        block6: [2, 5],
+        block7: [2, 1],
+        block8: [1, -1],
+        block9: [1, -3],
+        block10: [1, 2],
+        block11: [0, 3],
+        block12: [0, 0], 
+        block13: [-1, -4],
+        block14: [0, -2],
+        block15: [-2, 4],
+        block16: [-2, 2],
+        block17: [-2, 0],
+        block18: [-3, -2],
+        block19: [-4, 0],
+        block20: [-3, 5],
+        block21: [-5, 3],
+        block22: [-4, 1],
+        block23: [-6, 1]   
+    };
+
+let blocks = document.getElementsByClassName("block"),
+    block = blocks[0],
+    love = document.getElementsByClassName("love")[0],
+    timer = null,
+    index = 0, 
+    clone_block;    
+
+block.style.top = "50%";
+block.style.left = "50%";
+block.style.margin = "-20px 0 0 -20px";
+
+const block_left = parseFloat(window.getComputedStyle(block, null).left.slice(0, -2)),
+    block_top = parseFloat(window.getComputedStyle(block, null).top.slice(0, -2));
+
+function Next() {
+    if (++index >= 24) {
+        clearInterval(timer);
+
+        Rise();
+        return;
+    }
+
+    block.style.visibility = "visible"; 
+
+    block.style.left = block_left + 40 * offset_pitn["block" + index][0] + "px";
+    block.style.top = block_top - 40 * offset_pitn["block" + index][1] + "px";
+    for (let i = 0; i < block.children.length; i++) {
+        block.children[i].style.left = blk_pitn["block" + index][i][0] * -40 + "px";
+        block.children[i].style.top = blk_pitn["block" + index][i][1] * -40 + "px";
+    }
+
+    clone_block = block.cloneNode(true);
+    love.appendChild(clone_block);
+
+    if (love.children.length >= 24) {
+        blocks[blocks.length - 1].children[2].style.display = "none";
+        block.style.display = "none";   
+    }
+}
+
+function Rise() {
+    console.log("Love is rising ❤️");  
+    let timer2 = null,
+        distance = 0;
+    const target = 120, 
+        speed = 1;
+
+    let love_top = parseFloat(window.getComputedStyle(love, null).top.slice(0, -2));
+
+
+    timer2 = setInterval(() => {
+        distance += speed;
+        // console.log(distance);
+        if (distance >= target) {
+            clearInterval(timer2);
+
+            console.log("❤️ Trái tim đã bay lên!");
+             // HIỂN THỊ LỜI NHẮN
+      document.getElementById('message').style.display = 'block';
+        }
+        
+
+        love.style.top = (love_top - distance) + "px";
+
+    }, 22);
+
+}
+
+window.onload = function () {
+    setTimeout(() => {
+
+        timer = setInterval(() => {
+            Next();
+        }, 250);
+
+
+    }, 10000);
+};
+    </script>
+
+</body>
+
+</html>
